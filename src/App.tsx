@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { Heading } from '@chakra-ui/react';
+import { TodoList } from './features/todolist/TodoList';
 
 const App = (): JSX.Element => (
   <div className="App">
-    <Heading size="4xl">TODO</Heading>
+
+    <TodoList />
 
   </div>
 );
