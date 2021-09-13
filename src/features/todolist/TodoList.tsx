@@ -26,6 +26,11 @@ export const TodoList = (): JSX.Element => {
   useEffect(() => {
     getAllTodos('username1').unwrap()
       .then((data) => {
+        toast({
+          title: 'Successfully fetched data',
+          status: 'success',
+          duration: 1800,
+        });
         dispatch(setTodoList(data));
       })
       .catch(() => {
@@ -35,7 +40,7 @@ export const TodoList = (): JSX.Element => {
           duration: 1800,
         });
       });
-  }, [getAllTodos]);
+  }, [getAllTodos, dispatch, toast]);
 
   return (
     <>

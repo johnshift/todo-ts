@@ -11,6 +11,8 @@ export const store = configureStore({
     todoList: todoListReducer,
     [todoApi.reducerPath]: todoApi.reducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+    .concat(todoApi.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
