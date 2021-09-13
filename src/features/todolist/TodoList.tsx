@@ -2,12 +2,12 @@ import React from 'react';
 
 import {
   Center,
-  Table, Thead, Tbody, Tr, Th, Td, Icon, IconButton,
+  Table, Thead, Tbody, Tr, Th, Td,
 } from '@chakra-ui/react';
-import { FaEdit } from 'react-icons/fa';
 
 import { Todo } from './types';
 
+import { UpdateTodo } from './UpdateTodo';
 import { DeleteTodo } from './DeleteTodo';
 
 import { useAppSelector } from '../../app/hooks';
@@ -35,14 +35,8 @@ export const TodoList = (): JSX.Element => {
               <Td>{todo.isDone.toString()}</Td>
               <Td>{todo.targetDate}</Td>
               <Td>
-                <IconButton
-                  aria-label="edit-todo"
-                  size="xs"
-                  variant="solid"
-                  colorScheme="green"
-                  isRound
-                  mr={5}
-                  icon={<Icon as={FaEdit} />}
+                <UpdateTodo
+                  todo={todo}
                 />
 
                 <DeleteTodo todo={todo} />

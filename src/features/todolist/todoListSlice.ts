@@ -1,20 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
+import moment from 'moment';
 import { Todo, TodoListState } from './types';
 
 const initialState: TodoListState = {
   idCounter: 0,
   todoList: [
     {
-      id: 0, description: 'desc 0', isDone: false, targetDate: (new Date()).toISOString(),
+      id: 0, description: 'desc 0', isDone: false, targetDate: moment(new Date()).toISOString(),
     },
     {
-      id: 1, description: 'desc 1', isDone: false, targetDate: (new Date()).toISOString(),
+      id: 1, description: 'desc 1', isDone: false, targetDate: moment(new Date()).toISOString(),
     },
     {
-      id: 2, description: 'desc 2', isDone: false, targetDate: (new Date()).toISOString(),
+      id: 2, description: 'desc 2', isDone: false, targetDate: moment(new Date()).toISOString(),
     },
     {
-      id: 3, description: 'desc 3', isDone: false, targetDate: (new Date()).toISOString(),
+      id: 3, description: 'desc 3', isDone: false, targetDate: moment(new Date()).toISOString(),
     },
   ],
 };
