@@ -11,7 +11,7 @@ import {
 import moment from 'moment';
 import { SingleDatepicker } from 'chakra-dayzed-datepicker';
 
-import { FaTimes } from 'react-icons/fa';
+import { FaEdit } from 'react-icons/fa';
 import { Todo } from './types';
 
 import { useAppDispatch } from '../../app/hooks';
@@ -37,7 +37,7 @@ export const UpdateTodo = ({ todo }: Props): JSX.Element => {
         colorScheme="green"
         variant="solid"
         isRound
-        icon={<Icon as={FaTimes} />}
+        icon={<Icon as={FaEdit} />}
         onClick={() => {
           onOpen();
         }}

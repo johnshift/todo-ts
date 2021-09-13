@@ -3,7 +3,7 @@ import moment from 'moment';
 import { Todo, TodoListState } from './types';
 
 const initialState: TodoListState = {
-  idCounter: 0,
+  currentID: 3, // hardcode id autoincrement
   todoList: [
     {
       id: 0, description: 'desc 0', isDone: false, targetDate: moment(new Date()).toISOString(),
@@ -25,7 +25,14 @@ export const todoListSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, { payload }: { payload: Todo }) => {
-      state.todoList.push(payload);
+      // hardcode id autoincrement
+      const newID = state.currentID + 1;
+      const newTodo = {
+        ...payload,
+        id: newID,
+      };
+      state.currentID = newID;
+      state.todoList.push(newTodo);
     },
     deleteTodo: (state, { payload }: {payload: Todo }) => {
       state.todoList = state.todoList.filter((todo) => todo.id !== payload.id);

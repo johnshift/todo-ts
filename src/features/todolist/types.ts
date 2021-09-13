@@ -6,6 +6,6 @@ export interface Todo {
 }
 
 export interface TodoListState {
-  idCounter: number; // to be removed if connected to backend
+  currentID: number; // to be removed if connected to backend
   todoList: Todo[];
 }
