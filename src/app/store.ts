@@ -3,10 +3,13 @@ import counterReducer from '../features/counter/counterSlice';
 
 import todoListReducer from '../features/todolist/todoListSlice';
 
+import { todoApi } from '../features/todolist/todoApi';
+
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     todoList: todoListReducer,
+    [todoApi.reducerPath]: todoApi.reducer,
   },
 });
 

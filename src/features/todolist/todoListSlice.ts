@@ -24,6 +24,9 @@ export const todoListSlice = createSlice({
   name: 'todoList',
   initialState,
   reducers: {
+    setTodoList: (state, { payload }: { payload: Todo[]; }) => {
+      state.todoList = payload;
+    },
     addTodo: (state, { payload }: { payload: Todo }) => {
       // hardcode id autoincrement
       const newID = state.currentID + 1;
@@ -48,6 +51,8 @@ export const todoListSlice = createSlice({
   },
 });
 
-export const { addTodo, deleteTodo, updateTodo } = todoListSlice.actions;
+export const {
+  addTodo, deleteTodo, updateTodo, setTodoList,
+} = todoListSlice.actions;
 
 export default todoListSlice.reducer;
