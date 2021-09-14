@@ -1,8 +1,7 @@
 # (deprecated)
 - - - -
 ## Reasons:
-  - rtk query still immature
-  - cryptic typescript types
+  - rtk query still immature w/ cryptic typescript types
   - redux very clunky with too much boilerplate
   - redux not intuitve
 - - - -
